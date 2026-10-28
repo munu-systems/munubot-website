@@ -1,5 +1,5 @@
 /* ==========================================================================
-   AbideBot PRICING CONFIG: the one place to edit plans and prices.
+   munubot PRICING CONFIG: the one place to edit plans and prices.
    All prices are DRAFTS. Edit the values below; the pricing cards on the
    home page and the plan list in the waitlist form are built from them.
    - hkd: monthly price in HKD (number), 0 for free, null for "Contact us"
@@ -8,12 +8,12 @@
    ========================================================================== */
 window.ABIDEBOT_PRICING = {
   currencyNote: "Monthly prices in Hong Kong dollars, with approximate US dollars. Draft pricing, which may change before launch.",
-  contactEmail: "hello@abidebot.com",
+  contactEmail: "hello@munubot.com",
   plans: [
     {
       id: "selfhost", name: "Self-host", hkd: 0, usd: 0,
       status: "Planned",
-      desc: "Run AbideBot on your own hardware.",
+      desc: "Run munubot on your own hardware.",
       features: [
         "The same sealed image we host",
         "Native desktop app",
@@ -63,7 +63,7 @@ window.ABIDEBOT_PRICING = {
     {
       id: "selfmanaged", name: "Self-managed support", hkd: null, usd: null,
       status: "Annual, quoted",
-      desc: "For regulated firms that run AbideBot on their own infrastructure.",
+      desc: "For regulated firms that run munubot on their own infrastructure.",
       features: [
         "Annual agreement, quoted per deployment",
         "Support for your self-hosted install"
@@ -84,7 +84,7 @@ window.ABIDEBOT_PRICING = {
   }
   if(grid){
     grid.innerHTML=P.plans.map(function(p){
-      var href=p.cta==='contact'?'mailto:'+P.contactEmail+'?subject='+encodeURIComponent('AbideBot: '+p.name):'#early-access';
+      var href=p.cta==='contact'?'mailto:'+P.contactEmail+'?subject='+encodeURIComponent('munubot: '+p.name):'#early-access';
       return '<div class="card price'+(p.highlight?' pop':'')+'"'+(p.badge?' data-badge="'+esc(p.badge)+'"':'')+'>'+
         '<h3>'+esc(p.name)+(p.status?' <span class="tag soon">'+esc(p.status)+'</span>':'')+'</h3>'+money(p)+
         '<p class="desc">'+esc(p.desc)+'</p><ul>'+p.features.map(function(f){return '<li>'+esc(f)+'</li>'}).join('')+'</ul>'+
